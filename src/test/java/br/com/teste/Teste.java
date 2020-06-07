@@ -12,7 +12,7 @@ public class Teste {
 	private String resultado;
 	
 	@Test
-	public void primeiroTeste() {
+	public void somarNumeros() {
 		Driver.getDriver().findElement(By.id("digit_1")).click();
 		Driver.getDriver().findElement(By.id("op_add")).click();
 		Driver.getDriver().findElement(By.id("digit_2")).click();
