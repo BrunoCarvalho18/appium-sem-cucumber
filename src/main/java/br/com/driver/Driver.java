@@ -3,9 +3,8 @@ package br.com.driver;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,7 +26,7 @@ public class Driver {
 	    }
 
 	    @SuppressWarnings("rawtypes")
-		@Before
+		@BeforeAll
 	    private static AndroidDriver<?> conectar() {
 	        File diretorioAplicacao = new File("app");
 	        File arquivoAplicacao = new File(diretorioAplicacao, "ExactCalculator.apk");
@@ -56,7 +55,7 @@ public class Driver {
 	        return wait;
 	    }
 	    
-	    @After
+	    @AfterAll
 	    public static void encerrarDriver() {
 	        try {
 	            driver.quit();
