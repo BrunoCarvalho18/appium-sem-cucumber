@@ -55,7 +55,7 @@ public class Driver{
 	    }
 	    
 	    @AfterAll
-	    public static void encerrarDriver() {
+	    private static void encerrarDriver() {
 	        try {
 	            driver.quit();
 	        } catch (Exception ign) {}
