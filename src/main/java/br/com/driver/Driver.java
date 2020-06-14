@@ -14,7 +14,7 @@ import io.appium.java_client.remote.MobilePlatform;
 
 //<?> --> tipo genérico --> posso passar qualquer web element
 // Tipos Parametrizados
-public class Driver {
+public class Driver{
 	
 	 private static AndroidDriver<?> driver;
 
@@ -25,7 +25,7 @@ public class Driver {
 	        return driver;
 	    }
 
-	    @SuppressWarnings("rawtypes")
+	    @SuppressWarnings("rawtypes") //isso para métodos que já foram depreciados
 		@BeforeAll
 	    private static AndroidDriver<?> conectar() {
 	        File diretorioAplicacao = new File("app");
@@ -33,12 +33,11 @@ public class Driver {
 
 	        DesiredCapabilities capacidade = new DesiredCapabilities();
 	        capacidade.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
-	        capacidade.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
+	        capacidade.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
 	        capacidade.setCapability(MobileCapabilityType.APP, arquivoAplicacao.getAbsolutePath());
 	        capacidade.setCapability(MobileCapabilityType.NO_RESET, "true");
 	        capacidade.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator1");
 	        capacidade.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 4600);
-
 
 	        try {
 	            driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capacidade);
