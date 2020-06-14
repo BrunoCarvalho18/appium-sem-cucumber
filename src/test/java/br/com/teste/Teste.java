@@ -22,7 +22,7 @@ public class Teste {
 		assertEquals(resultado, "3");
 	}
 
-	@DisplayName("Teste para realizar a subtrair")
+	@DisplayName("Teste para realizar a subtracao")
 	@Test
 	public void subtrairNumeros() {
 		Driver.getDriver().findElement(By.id("digit_2")).click();
