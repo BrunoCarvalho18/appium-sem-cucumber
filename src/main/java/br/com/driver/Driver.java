@@ -12,7 +12,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.MobilePlatform;
 
-//<?> --> tipo genÈrico --> posso passar qualquer web element
+//<?> --> tipo gen√©rico --> posso passar qualquer web element
 // Tipos Parametrizados
 public class Driver{
 	
@@ -25,8 +25,8 @@ public class Driver{
 	        return driver;
 	    }
 
-	    @SuppressWarnings("rawtypes") //isso para mÈtodos que j· foram depreciados
-		@BeforeAll
+	    @SuppressWarnings("rawtypes") //isso para m√©todos que j√° foram depreciados
+	    @BeforeAll
 	    private static AndroidDriver<?> conectar() {
 	        File diretorioAplicacao = new File("app");
 	        File arquivoAplicacao = new File(diretorioAplicacao, "ExactCalculator.apk");
